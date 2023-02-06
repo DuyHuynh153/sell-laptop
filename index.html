@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Phiếu đặt phòng</h1>
+    Họ tên
+    <br />
+    <input type="text" id="txtHoten" />
+    <br />
+    Địa chỉ
+    <br />
+    <input type="text" id="txtdiachi" />
+    <br />
+    Số chứng minh nhân dân
+    <br />
+    <input type="text" id="txtcmnd" />
+    <br />
+    Mức giá
+    <br />
+    <select onchange="checkPrice(this)" id="select-price">
+      <option selected="selected" value="thuong">loại thường</option>
+      <option value="sangtrong">Sang trọng</option>
+      <option value="dacbiet">đặc biệt</option>
+    </select>
+    <br />
+    Ngày thuê
+    <br />
+    <input type="date" />
+    <br />
+    Ngày trả
+    <br />
+    <input type="date" />
+    <br />
+    Dịch vụ đi kèm
+    <br />
+    <input type="checkbox" id="op1" />
+    <label for="op1">Ăn sáng</label>
+    <br />
+    <input type="checkbox" id="op2" />
+    <label for="op2">Giặt ủi</label>
+    <br />
+    <input type="checkbox" id="op3" />
+    <label for="op3">Báo buổi sáng</label>
+    <br />
+    Tiền thuê phòng
+    <br />
+    <input type="text" />VND
+    <br />
+    <button onclick="tinhdongia()">Tính đơn giá</button>
+    <button>Đăng ký</button>
+  </body>
+
+  <script>
+    function tinhdongia() {
+      var hoten = document.getElementById("txtHoten").value;
+      var cmnd = document.getElementById("txtcmnd").value;
+      var diachi = document.getElementById("txtdiachi").value;
+      // console.log(mucgia.options[mucgia.selectedIndex].value);
+
+      if (hoten == "" || cmnd == "" || diachi == "") {
+        alert("Ban chua nhap du thong tin");
+      } else {
+      }
+    }
+
+    function checkPrice(select) {
+      var anSang = document.getElementById("op1");
+      var mucgia = select.value;
+      if (mucgia == "sangtrong" || mucgia == "dacbiet") {
+        anSang.checked = true;
+      } else {
+        anSang.checked = false;
+      }
+    }
+  </script>
+</html>
